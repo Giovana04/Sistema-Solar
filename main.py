@@ -55,7 +55,7 @@ def drawFunc(rotacaoPlanetas):
     glPopMatrix()
     
     glPushMatrix()
-    support.drawDisk(0.15,0.25,20,10, 0.2,0,0)
+    drawDisk(0.15,0.25,20,10, 0.2,0,0)
     glPopMatrix()
     
     glutSwapBuffers()
