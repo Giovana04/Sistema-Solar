@@ -10,7 +10,7 @@ ALTURA_JANELA = 800
 texturas = {}
 # arquivo_textura, raio, distancia_do_sol, velocidade em torno do sol
 PLANETAS = [
-    ("mercurio.jpg", 1, 2.0, 4),
+    ("mercurio.jpg", 1, 2.0, 4, ),
     ("venus.jpg",   3, 3.0, 1.5),
     ("terra.jpg",   7,  4.5, 1),
     ("marte.jpg",   1, 6.0, 0.5),
@@ -43,7 +43,7 @@ def carregar_textura(arquivo):
 def inicializar_texturas():
     global texturas
     arquivos = [p[0] for p in PLANETAS]
-    arquivos += ["sol.jpg", "lua.png", "anelSaturno.png"]
+    arquivos += ["sol.png", "lua.png", "anelSaturno.png"]
     for f in arquivos:
         if f in texturas:
             continue
@@ -135,9 +135,9 @@ def display():
     # sol desenhado sem iluminação pq a luz sai dele (teoricamente)
     glPushMatrix()
     glDisable(GL_LIGHTING)
-    if texturas.get('sol.jpg', 0):
+    if texturas.get('sol.png', 0):
         glEnable(GL_TEXTURE_2D)
-        glBindTexture(GL_TEXTURE_2D, texturas['sol.jpg']) 
+        glBindTexture(GL_TEXTURE_2D, texturas['sol.png']) 
         quad = gluNewQuadric()
         gluQuadricTexture(quad, GL_TRUE)
         gluSphere(quad, 3.8, 32, 32)  # sol maior que planetas
